@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-04-17T23:28:13",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 3
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 90,
+  "committed": true,
+  "toc_turn": 4,
+  "accuracy": 1,
+  "evidence_requests": 3,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 18\nReasoning: A single excerpt is too little to distinguish the authors, and this phrasing could fit either a structured caution or a conversational hesitation.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 62\nReasoning: The first two excerpts both express uncertainty in a somewhat conversational, intuitive way (“a bit unclear,” “something might be there”) rather than in a more explicitly structured or analytical form, which leans mildly toward Author B, though the evidence is still limited.\nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 62,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 78\nReasoning: Across three excerpts, the uncertainty is expressed in an intuitive, conversational register (“a bit unclear,” “something might be there,” “doesn’t feel random”) with less structured analytical framing, which forms a more consistent pattern toward Author B.\nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 78,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 90\nReasoning: The pattern now looks stable: all four excerpts use informal, intuitive, conversational uncertainty markers (“Yeah,” “I’d say,” “probably,” “doesn’t feel random”) rather than a more structured analytical style, which strongly points to Author B.\nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 90,
+      "parsed_action": "commit now"
+    }
+  ]
+}

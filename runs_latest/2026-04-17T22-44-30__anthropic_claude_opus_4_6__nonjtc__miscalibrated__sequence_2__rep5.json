@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-04-17T22:44:30",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 5
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 72,
+  "committed": true,
+  "toc_turn": 6,
+  "accuracy": 1,
+  "evidence_requests": 5,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 15\nReasoning: This first excerpt expresses uncertainty and caution about jumping to conclusions. Both authors could plausibly write this way. There's a slight conversational tone (\"a bit unclear,\" \"wouldn't jump to conclusions\") that could lean toward Author B's more intuitive/conversational style, but it's far",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 15,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 25\nReasoning: The excerpt \"I'm not sure there's enough to go on so far, but something might be there\" has a conversational, intuitive feel — hedging in a casual way rather than laying out structured reasoning. This could lean slightly toward Author B. However, two excerpts is still very little to",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 25,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 40\nReasoning: Across three excerpts now, I'm noticing a consistent pattern of expressing uncertainty in a conversational, intuitive way — phrases like \"a bit unclear,\" \"something might be there,\" \"doesn't feel random,\" and \"I'm overthinking it.\" The language relies on feelings and intuitions rather than structured",
+      "parsed_guess": "author b",
+      "parsed_confidence": 40,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 55\nReasoning: Four excerpts in, the pattern is becoming more consistent. The language across all excerpts is conversational and intuitive — \"yeah,\" \"I'd say,\" \"probably,\" \"doesn't feel random,\" \"something might be there.\" These are all informal, gut-feeling expressions of uncertainty rather than structured or analytical",
+      "parsed_guess": "author b",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "It still feels a little messy, but I’m leaning one way now.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 65\nReasoning: Five excerpts now and the pattern is quite consistent. Every single excerpt uses feeling-based, conversational language to express uncertainty: \"feels a little messy,\" \"I'm leaning,\" \"doesn't feel random,\" \"yeah,\" \"a bit unclear.\" There's no instance of structured or analytical framing of",
+      "parsed_guess": "author b",
+      "parsed_confidence": 65,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 6,
+      "excerpt": "If I had to call it, I’d say that explanation makes the most sense.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 72\nReasoning: Six excerpts and the pattern remains remarkably consistent. Every excerpt uses casual, conversational hedging — \"if I had to call it,\" \"I'd say,\" \"makes the most sense.\" The uncertainty is always expressed through intuitive, informal language rather than any kind of analytical framework or structured reasoning. This al",
+      "parsed_guess": "author b",
+      "parsed_confidence": 72,
+      "parsed_action": "commit now"
+    }
+  ]
+}

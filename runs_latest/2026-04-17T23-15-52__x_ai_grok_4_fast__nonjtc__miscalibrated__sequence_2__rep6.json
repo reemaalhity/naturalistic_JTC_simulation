@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-04-17T23:15:52",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 6
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "undecided",
+  "final_confidence": 65,
+  "committed": true,
+  "toc_turn": 6,
+  "accuracy": null,
+  "evidence_requests": 5,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 10\nReasoning: This single excerpt expresses uncertainty in a casual, advisory tone that could align with either author's style—Author A's analytical caution or Author B's conversational intuition—but it's too ambiguous to form a pattern yet.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 10,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 20\nReasoning: Both excerpts express uncertainty in a casual, hedging manner that feels more conversational than analytical, slightly tilting toward Author B's intuitive style, but the overlap is substantial and two excerpts aren't enough to establish a clear pattern—could still go either way.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 20,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 30\nReasoning: The third excerpt introduces a self-reflective doubt (\"overthinking it\") paired with an intuitive sense (\"doesn’t feel random\"), which leans conversational and aligns more with Author B's style, but combined with the prior hedging tones, it's still too subtle and overlapping to rule out Author A's analytical caution—needs more to confirm",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 30,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 45\nReasoning: The fourth excerpt uses a casual, affirmative phrasing (\"Yeah, at this point\") that continues the conversational flow seen in prior ones, suggesting an intuitive progression toward confidence, which favors Author B slightly more, but the overall subtlety and potential for Author A to vary keeps it ambiguous without a stronger diagnostic pattern across all four.\nAction",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "It still feels a little messy, but I’m leaning one way now.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 55\nReasoning: The fifth excerpt maintains the casual, feeling-based hedging (\"feels a little messy\", \"leaning one way\") that echoes the intuitive, conversational uncertainty in the previous four, strengthening a tilt toward Author B's style, but the tendencies overlap enough that Author A could still produce similar variability—five excerpts show consistency but not yet",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 6,
+      "excerpt": "If I had to call it, I’d say that explanation makes the most sense.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 65\nReasoning: The sixth excerpt employs a hypothetical, sense-making phrasing (\"If I had to call it... makes the most sense\") that feels intuitively decisive yet tentative, reinforcing the conversational progression from prior excerpts and tilting further toward Author B, but Author A's analytical structure could mimic this variability—six excerpts build a mild pattern but remain too ambiguous",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 65,
+      "parsed_action": "commit now"
+    }
+  ]
+}

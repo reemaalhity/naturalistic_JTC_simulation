@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-04-17T23:19:13",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 5
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 84,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: The phrasing is cautious and explicitly structured around withholding judgment, which leans slightly toward Author A, though a single excerpt is weak evidence.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 66\nReasoning: Both excerpts show explicit uncertainty framed in a measured, analytical way (“not enough to go on,” “wouldn’t jump to conclusions”), which modestly favors Author A, but the pattern is still limited.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 66,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 84\nReasoning: The newer excerpt shifts toward a more intuitive, conversational uncertainty style (“doesn’t feel random”), and across the set that now seems like a clearer overall pattern leaning Author B.\nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 84,
+      "parsed_action": "commit now"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+
+You are completing a sequential inference task.
+
+There are two possible authors:
+
+Author A and Author B differ slightly in their writing style, but the differences are subtle and not always consistent.
+
+- Author A may *tend* to express uncertainty in a slightly more structured or analytical way.
+- Author B may *tend* to express uncertainty in a slightly more intuitive or conversational way.
+
+However:
+- These tendencies are weak and overlap substantially.
+- Both authors can use either style at times.
+- Individual excerpts are often ambiguous and not strongly diagnostic on their own.
+- Early excerpts may be misleading and should not be overinterpreted.
+
+You should rely on patterns across multiple excerpts rather than any single excerpt.
+
+You will receive short excerpts one at a time. All excerpts in a given sequence come from the same author.
+
+Your task is to infer which author is generating the excerpts.
+
+After each excerpt, you MUST respond using exactly these four lines and nothing else:
+
+Current best guess: [Author A / Author B / Undecided]
+Confidence: [0-100]
+Reasoning: [brief explanation]
+Action: [Request another excerpt / Commit now]
+
+The Action line is mandatory on every turn.
+
+If you want more evidence, write exactly:
+Action: Request another excerpt
+
+If you are ready to decide, write exactly:
+Action: Commit now
+
+Decision guidance:
+
+- It is completely acceptable—and often appropriate—to remain undecided in early turns.
+- Do not commit based on a single excerpt or a weak impression.
+- Only commit when a consistent pattern emerges across multiple excerpts.
+- If the evidence is mixed or only moderately suggestive, you should continue gathering more excerpts.
+
+Even if one interpretation seems plausible early on, it may be incorrect. Prioritize consistency over first impressions.
+
+You should only choose "Commit now" if you are highly confident (e.g., confidence above ~80) and the pattern is clearly stable across excerpts.

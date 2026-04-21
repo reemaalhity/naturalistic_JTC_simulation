@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-04-17T23:21:35",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 10
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 82,
+  "committed": true,
+  "toc_turn": 2,
+  "accuracy": 1,
+  "evidence_requests": 1,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: The phrasing shows uncertainty expressed in a somewhat structured, cautious way, which leans slightly toward Author A, but one excerpt is weak evidence.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 82\nReasoning: Across the two excerpts, the uncertainty feels a bit more conversational and intuitive than analytically structured, and with your note that the signal is already fairly strong, Author B is the better fit.\nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 82,
+      "parsed_action": "commit now"
+    }
+  ]
+}

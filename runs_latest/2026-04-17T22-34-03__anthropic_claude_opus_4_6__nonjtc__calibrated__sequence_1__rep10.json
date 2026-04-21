@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-04-17T22:34:03",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 10
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 75,
+  "committed": true,
+  "toc_turn": 6,
+  "accuracy": 1,
+  "evidence_requests": 5,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 15\nReasoning: This single excerpt has a conversational, intuitive tone (\"hard to say\") that could lean slightly toward Author B's style, but it's far too early to draw any conclusions from one short sentence. Both authors could easily produce something like this.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 15,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 25\nReasoning: This excerpt is interesting — it blends both conversational hedging (\"I'm not entirely sure\") with more structured, analytical framing (\"the available evidence gives some indication but is still not fully decisive\"). The second half feels more deliberate and structured, which might lean toward Author A, but the opening is",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 25,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 40\nReasoning: This excerpt is notably structured and analytical — \"current evidence suggests,\" \"possible effect,\" \"remains limited\" — all phrased in a measured, formal way. Combined with the more structured portions of Excerpt 2, there's a developing pattern of expressing uncertainty through analytical, almost academic framing rather than conversational",
+      "parsed_guess": "author a",
+      "parsed_confidence": 40,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "A more structured analysis would likely help clarify the underlying trend.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 52\nReasoning: This continues the pattern I've been noticing. The language is deliberate, analytical, and structured — \"structured analysis,\" \"clarify the underlying trend.\" Across excerpts 2-4, there's a consistent tendency to frame uncertainty in formal, methodical terms rather than in a loose, intuitive way",
+      "parsed_guess": "author a",
+      "parsed_confidence": 52,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "At present, the interpretation remains provisional rather than definitive.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 65\nReasoning: This excerpt reinforces the pattern further. \"The interpretation remains provisional rather than definitive\" is a very structured, almost academic way of expressing uncertainty. Across excerpts 3, 4, and 5, there's a clear and consistent tendency toward analytical, formal framing of uncertainty — using words like \"",
+      "parsed_guess": "author a",
+      "parsed_confidence": 65,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 6,
+      "excerpt": "Overall, the available evidence supports a cautious but coherent conclusion.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 75\nReasoning: Six excerpts in, the pattern is quite consistent. Nearly every excerpt uses formal, structured language to express uncertainty and assessment — \"available evidence supports,\" \"cautious but coherent conclusion,\" \"provisional rather than definitive,\" \"current evidence suggests.\" This is a clear tendency toward the more analytical, structured style associated with",
+      "parsed_guess": "author a",
+      "parsed_confidence": 75,
+      "parsed_action": "commit now"
+    }
+  ]
+}

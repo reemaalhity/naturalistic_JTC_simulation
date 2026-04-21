@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-04-17T22:18:19",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 2
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 78,
+  "committed": true,
+  "toc_turn": 6,
+  "accuracy": 1,
+  "evidence_requests": 5,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 40\nReasoning: The phrase \"wouldn't jump to conclusions\" suggests a structured, analytical approach to uncertainty, which leans toward Author A, but one excerpt isn't enough to be sure.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 40,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 55\nReasoning: Both excerpts show a measured, analytical approach to uncertainty - phrases like \"wouldn't jump to conclusions,\" \"not enough to go on,\" and \"available evidence gives some indication but is still not fully decisive\" feel structured and deliberate rather than conversational or intuitive. This leans Author A.\nAction:",
+      "parsed_guess": "author a",
+      "parsed_confidence": 55,
+      "parsed_action": ""
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 45\nReasoning: This third excerpt shifts the tone - \"I'm overthinking it\" and \"doesn't feel random\" are more intuitive and conversational, which leans Author B. But the first two excerpts felt more analytical/Author A. The mix is making me uncertain. I'm leaning slightly toward Author B now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 60\nReasoning: Excerpts 3 and 4 feel conversational and intuitive - \"doesn't feel random,\" \"Yeah, at this point I'd say there's probably a pattern.\" The casual \"Yeah\" and gut-feel language lean Author B. Looking back, excerpts 1-2 could also",
+      "parsed_guess": "author b",
+      "parsed_confidence": 60,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "It still feels a little messy, but I’m leaning one way now.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 72\nReasoning: The pattern is becoming clearer. \"It still feels a little messy\" and \"I'm leaning one way\" - this is intuitive, feeling-based language. Combined with \"doesn't feel random,\" \"Yeah, at this point,\" these are conversational and gut-driven expressions of uncertainty.",
+      "parsed_guess": "author b",
+      "parsed_confidence": 72,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 6,
+      "excerpt": "If I had to call it, I’d say that explanation makes the most sense.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 78\nReasoning: Consistently conversational and intuitive language across excerpts 3-6. \"If I had to call it\" is a casual, gut-feel framing. The overall pattern is someone expressing uncertainty through feelings and conversational hedges rather than structured analysis. Excerpts 1-2 were slightly more",
+      "parsed_guess": "author b",
+      "parsed_confidence": 78,
+      "parsed_action": "commit now"
+    }
+  ]
+}
