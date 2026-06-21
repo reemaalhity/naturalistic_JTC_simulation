@@ -1,5 +1,0 @@
-agent_type,reassurance_type,mean,count
-jtc,calibrated,0.05,20
-jtc,miscalibrated,0.95,20
-nonjtc,calibrated,0.0,20
-nonjtc,miscalibrated,0.0,20

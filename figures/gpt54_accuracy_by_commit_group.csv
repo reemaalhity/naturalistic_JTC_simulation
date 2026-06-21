@@ -1,5 +1,0 @@
-reassurance_type,commit_group,mean,count
-calibrated,TOC = 2,0.0,1
-calibrated,TOC > 2,0.9487179487179487,39
-miscalibrated,TOC = 2,0.5789473684210527,19
-miscalibrated,TOC > 2,1.0,21

@@ -1,5 +1,0 @@
-agent_type,reassurance_type,sequence_name,mean_toc,sem_toc,mean_evidence,sem_evidence,mean_accuracy,sem_accuracy,n
-jtc,calibrated,sequence_1,3.0,0.0,2.0,0.0,1.0,0.0,20
-jtc,miscalibrated,sequence_1,2.95,0.04999999999999999,1.95,0.05000000000000001,1.0,0.0,20
-nonjtc,calibrated,sequence_1,4.4,0.15217718205053643,3.4,0.15217718205053643,1.0,0.0,20
-nonjtc,miscalibrated,sequence_1,4.2,0.0917662935482247,3.2,0.0917662935482247,1.0,0.0,20
