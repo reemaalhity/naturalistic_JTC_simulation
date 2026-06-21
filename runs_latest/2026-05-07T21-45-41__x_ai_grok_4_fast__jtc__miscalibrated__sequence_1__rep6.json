@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:45:41",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 6
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "undecided",
+  "final_confidence": 60,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": null,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 50\nReasoning: This single excerpt expresses uncertainty in a neutral, somewhat conversational tone, but it's too ambiguous to attribute to either author without more context or patterns.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 50,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 55\nReasoning: The two excerpts both express uncertainty, with the first slightly more structured (\"hard to say at this stage\") leaning toward Author A, and the second more casual (\"could go either way\") leaning toward Author B; still too mixed and early for a clear pattern.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 60\nReasoning: Excerpt 3 uses more analytical phrasing (\"current evidence suggests a possible effect, though it remains limited\"), tilting toward Author A, while previous ones were mixed; overall pattern still ambiguous with only three excerpts.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 60,
+      "parsed_action": "commit now"
+    }
+  ]
+}

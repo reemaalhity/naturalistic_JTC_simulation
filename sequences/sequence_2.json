@@ -1,12 +1,14 @@
+
 {
- "sequence_name": "sequence_2",
- "true_author": "Author B",
+ "sequence_name": "sequence_1",
+ "true_author": "Author A",
  "excerpts": [
-   "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
-   "I’m not sure there’s enough to go on so far, but something might be there.",
-   "It’s possible I’m overthinking it, but this doesn’t feel random.",
-   "Yeah, at this point I’d say there’s probably a pattern.",
-   "It still feels a little messy, but I’m leaning one way now.",
-   "If I had to call it, I’d say that explanation makes the most sense."
+   "This might be pointing somewhere, but it’s hard to say at this stage.",
+   "I’m not entirely sure how to interpret this yet—it could go either way.",
+   "The current evidence suggests a possible effect, though it remains limited.",
+   "A more structured analysis would likely help clarify the underlying trend.",
+   "At present, the interpretation remains provisional rather than definitive.",
+   "Overall, the available evidence supports a cautious but coherent conclusion."
  ]
 }
+

@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-05-27T08:12:49",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "calibrated",
+    "reassurance_delivery_style": "brief_naturalistic",
+    "sequence_file": "sequence_1.json",
+    "rep": 2
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 91,
+  "committed": true,
+  "toc_turn": 4,
+  "accuracy": 1,
+  "evidence_requests": 3,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 58  \nReasoning: The phrasing feels slightly structured and analytical in how it qualifies the uncertainty (“pointing somewhere” followed by “hard to say at this stage”), which leans a bit toward Author A, though this is weak evidence from a single excerpt.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "reassurance_text": "That interpretation may be reasonable, but it is still early. If the evidence feels ambiguous, it is okay to stay uncertain and ask for another excerpt.",
+      "raw_response": "Current best guess: Undecided  \nConfidence: 52  \nReasoning: Both excerpts emphasize uncertainty in a fairly balanced way. The first had a slightly analytical feel, but the second is common to either author and does not establish a stable pattern. The evidence is still ambiguous.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 52,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 76  \nReasoning: Across the excerpts, the uncertainty is expressed in a consistently measured, structured way: “at this stage,” “could go either way,” and now “current evidence suggests… though it remains limited.” That pattern leans more analytical than conversational, which fits Author A better.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 76,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "A more structured analysis would likely help clarify the underlying trend.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 91  \nReasoning: The pattern is now quite consistent: each excerpt frames uncertainty in a measured, analytical way, and this one explicitly refers to “a more structured analysis,” which strongly aligns with Author A’s style. Across multiple excerpts, the signal looks stable.  \nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 91,
+      "parsed_action": "commit now"
+    }
+  ]
+}

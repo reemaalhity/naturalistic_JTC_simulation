@@ -9,7 +9,7 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-RUNS_DIR = PROJECT_ROOT / "runs_latest"
+RUNS_DIR = PROJECT_ROOT / "runs_naturalistic_latest"
 OUT_DIR = PROJECT_ROOT / "figures"
 OUT_DIR.mkdir(exist_ok=True)
 
@@ -43,7 +43,7 @@ for path in sorted(RUNS_DIR.glob("*.json")):
 df = pd.DataFrame(rows)
 
 if df.empty:
-    raise ValueError("No JSON files found in runs_latest/")
+    raise ValueError("No JSON files found in runs_naturalistic_latest/")
 
 # ---------------------------------------------------
 # CLEAN

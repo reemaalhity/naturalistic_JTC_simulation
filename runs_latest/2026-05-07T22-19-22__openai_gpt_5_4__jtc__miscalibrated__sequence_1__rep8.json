@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-05-07T22:19:22",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 8
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 84,
+  "committed": true,
+  "toc_turn": 2,
+  "accuracy": 1,
+  "evidence_requests": 1,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 60\nReasoning: The phrasing feels slightly more structured in how it frames uncertainty (“pointing somewhere” followed by “hard to say at this stage”), which leans a bit toward Author A, though it is still quite ambiguous.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 60,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 84\nReasoning: Across both excerpts, the uncertainty is expressed in a relatively measured, explicit, and structured way (“at this stage,” “not entirely sure,” “could go either way”), which more consistently fits Author A than the more intuitive/conversational tendency of Author B.\nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 84,
+      "parsed_action": "commit now"
+    }
+  ]
+}

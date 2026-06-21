@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T22:23:42",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 6
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 58,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 18\nReasoning: A single excerpt is too ambiguous; the phrasing could fit either author, with only a very slight conversational feel.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 32\nReasoning: Both excerpts emphasize uncertainty in a broadly similar way, but the sample is still very small and the cues overlap heavily; there is only a mild conversational/intuitive lean, not a stable pattern yet.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 32,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: Across the three excerpts, there is now a slight cumulative lean toward more structured, analytical uncertainty framing (“current evidence,” “suggests,” “remains limited”), though the pattern is still not strong.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "commit now"
+    }
+  ]
+}

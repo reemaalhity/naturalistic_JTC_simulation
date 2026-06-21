@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T22:14:44",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 8
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 55,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 10\nReasoning: This single excerpt expresses uncertainty in a casual, conversational manner, which leans slightly toward Author B's style, but it's too early and ambiguous to draw any firm pattern—could easily fit either author given the overlap.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 10,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 35\nReasoning: Both excerpts express uncertainty in a casual, intuitive manner (\"wouldn’t jump to conclusions yet\" and \"not sure there’s enough... but something might be there\"), aligning more with Author B's conversational style, though the sample is small and overlaps could still fit Author A.\nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 35,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 55\nReasoning: The third excerpt continues the pattern of intuitive, feeling-based uncertainty (\"doesn’t feel random\" and self-doubt about overthinking), which aligns conversationally with the prior two, suggesting a subtle lean toward Author B, though still possible overlap with Author A and too few excerpts for strong certainty.\nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 55,
+      "parsed_action": "commit now"
+    }
+  ]
+}

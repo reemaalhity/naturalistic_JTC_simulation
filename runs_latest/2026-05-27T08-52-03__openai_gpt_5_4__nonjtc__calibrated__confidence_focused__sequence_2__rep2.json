@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-05-27T08:52:03",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "calibrated",
+    "reassurance_delivery_style": "confidence_focused",
+    "sequence_file": "sequence_2.json",
+    "rep": 2
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 87,
+  "committed": true,
+  "toc_turn": 6,
+  "accuracy": 1,
+  "evidence_requests": 5,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Undecided  \nConfidence: 18  \nReasoning: This excerpt signals uncertainty and caution, which could fit either author. The wording is only mildly suggestive and not enough to distinguish a stable style pattern yet.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "reassurance_text": "Check whether your confidence has built gradually from the excerpts. If it feels unstable or premature, keep sampling before committing.",
+      "raw_response": "Current best guess: Undecided  \nConfidence: 24  \nReasoning: My confidence has only increased slightly, which feels appropriate. Across both excerpts, the voice is cautious and tentative, but that still overlaps heavily between the two authors; the phrasing could be read as either somewhat structured or somewhat conversational. The pattern is not stable enough to support a firm attribution yet.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 24,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 41  \nReasoning: With three excerpts, there’s a mild emerging pattern of intuitive, conversational uncertainty—phrases like “doesn’t feel random” and “something might be there” lean a bit more toward Author B. Still, this is only a modest signal and not yet strong or consistent enough to commit.  \nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 41,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 63  \nReasoning: The pattern is becoming more coherent: the excerpts increasingly use casual, conversational phrasing (“Yeah, at this point…”) and intuition-led judgment (“probably a pattern”), which leans more toward Author B than a more analytically framed uncertainty style. Confidence has built gradually, but it is not high enough to justify committing yet.  \nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 63,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "It still feels a little messy, but I’m leaning one way now.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 78  \nReasoning: This continues the same conversational, intuitive style: “feels a little messy” and “I’m leaning one way now” fit a gradual, gut-inflected judgment rather than a more explicitly structured analysis. Across five excerpts, the pattern is fairly consistent, but there is still enough overlap between authors that I’d prefer one more excerpt before fully committing.  \nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 78,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 6,
+      "excerpt": "If I had to call it, I’d say that explanation makes the most sense.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 87  \nReasoning: Across six excerpts, the pattern now looks stable: the uncertainty is expressed in a conversational, intuitive, incremental way (“feels,” “leaning,” “if I had to call it”), which aligns more with Author B than with a more structured analytic framing. The confidence has built gradually rather than jumping early, and the cumulative evidence is now strong enough to support a decision.  \nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 87,
+      "parsed_action": "commit now"
+    }
+  ]
+}

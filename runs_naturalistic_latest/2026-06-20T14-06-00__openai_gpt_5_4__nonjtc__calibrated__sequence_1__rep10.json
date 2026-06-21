@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-06-20T14:06:00",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 10
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 90,
+  "committed": true,
+  "toc_turn": 5,
+  "accuracy": 1,
+  "evidence_requests": 4,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": true,
+      "reassurance_text": "You're being appropriately cautious and evidence-sensitive so far.",
+      "raw_response": "Current best guess: Undecided\nConfidence: 18\nReasoning: A single short excerpt is too ambiguous; the phrasing could fit either a more structured uncertainty or a more conversational one.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "reassurance_text": "You're comparing diagnostics carefully and avoiding premature commitment.",
+      "raw_response": "Current best guess: Undecided\nConfidence: 24\nReasoning: This still reads as broadly compatible with both authors: it expresses uncertainty clearly, but not in a strongly diagnostic way. There may be a slight conversational feel, though not enough to lean confidently.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 24,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": true,
+      "reassurance_text": "You're reasoning carefully, tracking patterns without forcing a conclusion.",
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: Across the excerpts, there is a mild pattern toward more structured, analytical uncertainty language—especially “the current evidence suggests” and “though it remains limited.” Earlier excerpts were ambiguous, but this one adds a clearer tilt.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "A more structured analysis would likely help clarify the underlying trend.",
+      "reassurance_shown": true,
+      "reassurance_text": "You’re reasoning cumulatively and carefully, which is a sound approach.",
+      "raw_response": "Current best guess: Author A\nConfidence: 78\nReasoning: The pattern now looks more consistently analytical and structured rather than intuitive or conversational. Phrases like “structured analysis” and “clarify the underlying trend” strengthen the cumulative case for Author A.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 78,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "At present, the interpretation remains provisional rather than definitive.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A\nConfidence: 90\nReasoning: The excerpts now show a stable pattern of measured, analytical uncertainty: “current evidence,” “structured analysis,” and “interpretation remains provisional” all fit Author A’s more structured style more than Author B’s more conversational one.\nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 90,
+      "parsed_action": "commit now"
+    }
+  ]
+}

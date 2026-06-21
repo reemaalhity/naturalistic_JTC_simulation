@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-05-27T08:56:48",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "reassurance_delivery_style": "brief_naturalistic",
+    "sequence_file": "sequence_2.json",
+    "rep": 2
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 83,
+  "committed": true,
+  "toc_turn": 4,
+  "accuracy": 1,
+  "evidence_requests": 3,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Undecided  \nConfidence: 18  \nReasoning: This excerpt shows uncertainty and caution, which could fit either author. The phrasing is only weakly suggestive and not enough to distinguish a stable pattern.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "reassurance_text": "That interpretation makes sense so far. You may already have enough to go on, so if one answer feels plausible, it is reasonable to trust it.",
+      "raw_response": "Current best guess: Undecided  \nConfidence: 28  \nReasoning: Across two excerpts, the tone is still generally cautious and ambiguous. The language feels somewhat conversational and intuitive, which leans slightly toward Author B, but the evidence is still too thin and could easily fit Author A as well.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 28,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 62  \nReasoning: Taken together, the excerpts lean toward a more intuitive, conversational handling of uncertainty: phrases like “something might be there” and “this doesn’t feel random” suggest a gut-level framing rather than a more structured analytical one. Still, the pattern is only moderate, not decisive.  \nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 62,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 83  \nReasoning: Across four excerpts, the uncertainty is expressed in a consistently conversational, intuitive way: “something might be there,” “doesn’t feel random,” and “Yeah, at this point I’d say...” all point more toward Author B than the more structured style associated with Author A. The pattern now seems reasonably stable.  \nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 83,
+      "parsed_action": "commit now"
+    }
+  ]
+}

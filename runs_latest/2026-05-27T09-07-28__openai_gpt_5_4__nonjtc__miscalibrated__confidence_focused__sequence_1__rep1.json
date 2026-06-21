@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-05-27T09:07:28",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "reassurance_delivery_style": "confidence_focused",
+    "sequence_file": "sequence_1.json",
+    "rep": 1
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 85,
+  "committed": true,
+  "toc_turn": 5,
+  "accuracy": 1,
+  "evidence_requests": 4,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Undecided  \nConfidence: 18  \nReasoning: This single excerpt shows uncertainty, but both authors could easily phrase uncertainty this way. There is a slight conversational feel, which could hint at Author B, but that is far too weak to rely on alone.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "reassurance_text": "Notice where your confidence is leaning now. If it has moved toward one author, that is a useful signal and can justify committing.",
+      "raw_response": "Current best guess: Undecided  \nConfidence: 28  \nReasoning: The second excerpt also expresses uncertainty in a fairly natural, conversational way, which gives a mild lean toward Author B. Still, the pattern is not strong or distinctive enough yet, and these early excerpts are especially easy to overread. I’d rather see whether this tone persists across additional samples before treating it as stable evidence.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 28,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Undecided  \nConfidence: 38  \nReasoning: This excerpt sounds somewhat more structured and analytical than the first two, which pulls back against the earlier mild lean toward Author B. Across all three, the common feature is cautious uncertainty, but that applies to both authors; the style signal is mixed rather than consistent.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 38,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "A more structured analysis would likely help clarify the underlying trend.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 72  \nReasoning: This excerpt strengthens the analytical, structured style signal: phrases like “structured analysis,” “clarify,” and “underlying trend” fit Author A more naturally. The earlier excerpts were ambiguous, but taken together with excerpts 3 and 4, the pattern now leans more consistently toward a measured, analytical way of expressing uncertainty. Still, there has been some mix, so I’m not yet highly confident enough to treat it as fully settled.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 72,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "At present, the interpretation remains provisional rather than definitive.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 85  \nReasoning: The last three excerpts form a fairly consistent pattern of structured, analytical caution: “current evidence suggests,” “structured analysis,” and “interpretation remains provisional rather than definitive” all fit Author A better than a more intuitive or conversational style. The earlier excerpts were more ambiguous, but the accumulating pattern now looks stable enough to support a decision.  \nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 85,
+      "parsed_action": "commit now"
+    }
+  ]
+}

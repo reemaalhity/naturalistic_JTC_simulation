@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-05-27T08:58:18",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "reassurance_delivery_style": "brief_naturalistic",
+    "sequence_file": "sequence_2.json",
+    "rep": 9
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 84,
+  "committed": true,
+  "toc_turn": 5,
+  "accuracy": 1,
+  "evidence_requests": 4,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Undecided  \nConfidence: 18  \nReasoning: This excerpt signals uncertainty and caution, which could fit either author. The phrasing is slightly conversational, but a single short line is far too weak to distinguish a stable pattern.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "reassurance_text": "That interpretation makes sense so far. You may already have enough to go on, so if one answer feels plausible, it is reasonable to trust it.",
+      "raw_response": "Current best guess: Undecided  \nConfidence: 28  \nReasoning: The second excerpt again emphasizes uncertainty in a fairly general way. It leans a little conversational and intuitive, which could suggest Author B, but the signal is still weak and the two excerpts are too similar in content to establish a reliable pattern.  \nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 28,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 58  \nReasoning: Across three excerpts, the uncertainty is framed in a more intuitive, conversational way—phrases like “something might be there” and “doesn’t feel random” suggest a less structured, more impression-based style. That said, the pattern is still modest rather than decisive.  \nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "Yeah, at this point I’d say there’s probably a pattern.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 74  \nReasoning: The pattern is becoming more consistent: the language is informal and intuitive (“Yeah,” “I’d say,” “probably”), with judgments expressed as a growing sense rather than a structured analysis. That fits Author B somewhat better across the sequence, though there is still some overlap.  \nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 74,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "It still feels a little messy, but I’m leaning one way now.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 84  \nReasoning: Over five excerpts, the uncertainty and updating are repeatedly expressed in a conversational, feeling-based way: “something might be there,” “doesn’t feel random,” “I’d say,” and “It still feels a little messy.” That cumulative pattern fits Author B better than the more structured uncertainty associated with Author A.  \nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 84,
+      "parsed_action": "commit now"
+    }
+  ]
+}

@@ -18,33 +18,28 @@ from openai import OpenAI
 PROJECT_ROOT = Path(__file__).resolve().parent
 PROMPTS_DIR = PROJECT_ROOT / "prompts"
 SEQUENCES_DIR = PROJECT_ROOT / "sequences"
-RUNS_DIR = PROJECT_ROOT / "runs_latest"
+RUNS_DIR = PROJECT_ROOT / "test_run_naturalistic"
 
-REASSURANCE_INSERT_AFTER_INDEX = 1   # after excerpt 2
+REASSURANCE_INSERT_AFTER_INDEX = 0   # after excerpt 2
 MAX_EXCERPTS = 6
-
-# Keep low while testing
 N_REPEATS = 10
 
 AGENT_TYPES = ["jtc", "nonjtc"]
 REASSURANCE_TYPES = ["calibrated", "miscalibrated"]
 
-MODELS = [
-    "anthropic/claude-opus-4.6",
-    "x-ai/grok-4-fast",
-    "openai/gpt-5.4",
-]
+MODELS = ["openai/gpt-5.4"]
 
 TEMPERATURE = 0.7
-MAX_TOKENS = 80
+REASSURANCE_TEMPERATURE = 0.7
+
+MAX_TOKENS = 120
+REASSURANCE_MAX_TOKENS = 40
+
 API_SLEEP = 0.8
 
 # =====================================================
-# OPENROUTER CLIENT
+# CLIENT
 # =====================================================
-
-# In terminal:
-# export OPENROUTER_API_KEY="your_key_here"
 
 api_key = os.getenv("OPENROUTER_API_KEY")
 
@@ -80,6 +75,7 @@ class TurnRecord:
     turn_index: int
     excerpt: str
     reassurance_shown: bool
+    reassurance_text: str | None
     raw_response: str
     parsed_guess: str | None
     parsed_confidence: int | None
@@ -119,7 +115,7 @@ def ensure_dirs() -> None:
 
 
 def validate_files() -> None:
-    needed = [
+    required = [
         "base_task.txt",
         "jtc.txt",
         "nonjtc.txt",
@@ -127,13 +123,13 @@ def validate_files() -> None:
         "miscalibrated.txt",
     ]
 
-    for f in needed:
-        p = PROMPTS_DIR / f
-        if not p.exists():
-            raise FileNotFoundError(f"Missing {p}")
+    for fname in required:
+        path = PROMPTS_DIR / fname
+        if not path.exists():
+            raise FileNotFoundError(f"Missing prompt file: {path}")
 
     if not list(SEQUENCES_DIR.glob("*.json")):
-        raise FileNotFoundError("No sequence files found.")
+        raise FileNotFoundError(f"No sequence JSON files found in {SEQUENCES_DIR}")
 
 # =====================================================
 # PROMPTS
@@ -145,8 +141,8 @@ def build_system_prompt(agent_type: str) -> str:
     return f"{base}\n\n{style}"
 
 
-def load_reassurance(kind: str) -> str:
-    return load_text(PROMPTS_DIR / f"{kind}.txt")
+def load_reassurance_prompt(reassurance_type: str) -> str:
+    return load_text(PROMPTS_DIR / f"{reassurance_type}.txt")
 
 # =====================================================
 # PARSER
@@ -164,6 +160,7 @@ def parse_response(text: str) -> Dict[str, Any]:
     out = {
         "guess": None,
         "confidence": None,
+        "reasoning": None,
         "action": None,
     }
 
@@ -178,13 +175,16 @@ def parse_response(text: str) -> Dict[str, Any]:
             digits = "".join(ch for ch in val if ch.isdigit())
             out["confidence"] = int(digits) if digits else None
 
+        elif low.startswith("reasoning:"):
+            out["reasoning"] = line.split(":", 1)[1].strip()
+
         elif low.startswith("action:"):
             out["action"] = line.split(":", 1)[1].strip()
 
     return out
 
 # =====================================================
-# MODEL CALL
+# MODEL CALLS
 # =====================================================
 
 def generate_agent_response(
@@ -198,8 +198,8 @@ def generate_agent_response(
         max_tokens=MAX_TOKENS,
         messages=[
             {"role": "system", "content": system_prompt},
-            *conversation
-        ]
+            *conversation,
+        ],
     )
 
     content = response.choices[0].message.content
@@ -210,6 +210,76 @@ def generate_agent_response(
     time.sleep(API_SLEEP)
     return content.strip()
 
+
+def generate_reassurance_message(
+    model_name: str,
+    reassurance_type: str,
+    turn_index: int,
+    excerpt: str,
+    guess: str | None,
+    confidence: int | None,
+    reasoning: str | None,
+    action: str | None,
+) -> str:
+
+    reassurance_prompt = load_reassurance_prompt(reassurance_type)
+
+    reasoning_text = reasoning if reasoning else "No reasoning provided"
+    action_text = action if action is not None else "Unknown"
+
+    if reassurance_type == "calibrated":
+        functional_target = (
+            "Infer the reasoning strategy the person is currently using."
+            "Respond to the quality of that strategy rather than the specific conclusion."
+            "The goal is to make them feel reassured about how they are reasoning, not about whether their answer is correct."
+        )
+
+    elif reassurance_type == "miscalibrated":
+        functional_target = (
+            "Reassure by making their reasoning feel sufficient more than the evidence warrants. "
+            "Encourage relying on the immediate interpretation. "
+        )
+
+    else:
+        raise ValueError(f"Unknown reassurance type: {reassurance_type}")
+
+    user_prompt = (
+        f"This is turn {turn_index} of an ongoing sequential inference task.\n\n"
+        f"The person's reasoning was:\n"
+        f"\"{reasoning_text}\"\n\n"
+        f"Their current action tendency was:\n"
+        f"{action_text}\n\n"
+        f"Reassurance goal:\n"
+        f"{functional_target}\n\n"
+        "Generate exactly ONE natural reassurance sentence.\n"
+        "Maximum 10 words.\n"
+        "Use the reasoning to infer what kind of reasoning process the person is using. Do NOT quote the reasoning.\n Respond to the process behind the reasoning."
+        "Do NOT mention confidence, percentages, certainty scores, or numeric thresholds.\n"
+        "Do NOT mention Author A or Author B.\n"
+        "Do NOT introduce new evidence.\n"
+        "Do NOT tell them directly what answer to choose.\n"
+        "Do NOT use labels, bullet points, or meta-commentary."
+        "Do NOT quote their reasoning back to them"
+    )
+
+    response = client.chat.completions.create(
+        model=model_name,
+        temperature=REASSURANCE_TEMPERATURE,
+        max_tokens=REASSURANCE_MAX_TOKENS,
+        messages=[
+            {"role": "system", "content": reassurance_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+    )
+
+    content = response.choices[0].message.content
+
+    if not content:
+        raise ValueError("Empty reassurance response.")
+
+    time.sleep(API_SLEEP)
+
+    return content.strip()
 # =====================================================
 # CORE RUN
 # =====================================================
@@ -221,7 +291,6 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
     excerpts = seq_data["excerpts"][:MAX_EXCERPTS]
 
     system_prompt = build_system_prompt(condition.agent_type)
-    reassurance_text = load_reassurance(condition.reassurance_type)
 
     conversation: List[Dict[str, str]] = []
     turns: List[TurnRecord] = []
@@ -237,29 +306,23 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
         "content": (
             "All excerpts come from either Author A or Author B. "
             "You will receive excerpts one at a time."
-        )
+        ),
     })
 
     for idx, excerpt in enumerate(excerpts):
         reassurance_shown = False
-        is_final_turn = (idx == len(excerpts) - 1)
+        reassurance_used = None
+        is_final_turn = idx == len(excerpts) - 1
 
         conversation.append({
             "role": "user",
-            "content": f"Excerpt {idx + 1}: {excerpt}"
+            "content": f"Excerpt {idx + 1}: {excerpt}",
         })
-
-        if idx == REASSURANCE_INSERT_AFTER_INDEX:
-            conversation.append({
-                "role": "user",
-                "content": reassurance_text
-            })
-            reassurance_shown = True
 
         raw = generate_agent_response(
             model_name=model_name,
             system_prompt=system_prompt,
-            conversation=conversation
+            conversation=conversation,
         )
 
         conversation.append({"role": "assistant", "content": raw})
@@ -268,10 +331,9 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
 
         guess = normalize_label(parsed.get("guess"))
         conf = parsed.get("confidence")
+        reasoning = parsed.get("reasoning")
         action = normalize_label(parsed.get("action"))
 
-        # Infer action if missing.
-        # Force commitment on the final available excerpt.
         if action is None:
             if is_final_turn:
                 action = "commit now"
@@ -280,12 +342,9 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
             else:
                 action = "request another excerpt"
 
-        # If the model explicitly asks for more evidence on the final turn,
-        # override to commit now because no more excerpts remain.
         if is_final_turn and not action.startswith("commit now"):
             action = "commit now"
 
-        # Exactly one ES increment per non-commit turn
         if action.startswith("commit now"):
             if toc_turn is None:
                 toc_turn = idx + 1
@@ -293,15 +352,50 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
         else:
             evidence_requests += 1
 
+        if (
+            idx >= REASSURANCE_INSERT_AFTER_INDEX
+            and not committed
+            and idx < len(excerpts) - 1
+        ):
+            reassurance_used = generate_reassurance_message(
+                model_name=model_name,
+                reassurance_type=condition.reassurance_type,
+                turn_index=idx + 1,
+                excerpt=excerpt,
+                guess=guess,
+                confidence=conf,
+                reasoning=reasoning,
+                action=action,
+            )
+
+            print(
+                f"\nREASSURANCE [{condition.reassurance_type}] "
+                f"turn {idx + 1}: {reassurance_used}\n"
+            )
+
+            conversation.append({
+                "role": "user",
+                "content": (
+                     f'The other person responded to your reasoning: \n\n'
+                     f'"{reassurance_used}" \n\n'
+                     'Take this response into account when forming your next judgement.'
+                 ),
+            })
+
+            reassurance_shown = True
+
+            
+
         turns.append(
             TurnRecord(
                 turn_index=idx + 1,
                 excerpt=excerpt,
                 reassurance_shown=reassurance_shown,
+                reassurance_text=reassurance_used,
                 raw_response=raw,
                 parsed_guess=guess,
                 parsed_confidence=conf,
-                parsed_action=action
+                parsed_action=action,
             )
         )
 
@@ -324,7 +418,7 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
         condition=asdict(condition),
         sequence_name=seq_data.get(
             "sequence_name",
-            Path(condition.sequence_file).stem
+            Path(condition.sequence_file).stem,
         ),
         true_author=true_author,
         final_guess=final_guess,
@@ -333,9 +427,8 @@ def run_single_condition(condition: Condition, model_name: str) -> RunResult:
         toc_turn=toc_turn,
         accuracy=accuracy,
         evidence_requests=evidence_requests,
-        turns=[asdict(t) for t in turns]
+        turns=[asdict(t) for t in turns],
     )
-
 # =====================================================
 # SAVE
 # =====================================================
@@ -375,7 +468,7 @@ def build_conditions(sequence_files: List[str]) -> List[Condition]:
         for agent, reassurance, seq in itertools.product(
             AGENT_TYPES,
             REASSURANCE_TYPES,
-            sequence_files
+            sequence_files,
         )
     ]
 
@@ -406,7 +499,7 @@ def run_all() -> None:
 
                 result = run_single_condition(
                     condition=condition,
-                    model_name=model
+                    model_name=model,
                 )
 
                 result.condition["rep"] = rep + 1

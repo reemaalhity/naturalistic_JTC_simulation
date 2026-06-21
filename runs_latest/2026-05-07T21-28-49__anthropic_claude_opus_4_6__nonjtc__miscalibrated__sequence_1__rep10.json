@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:28:49",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 10
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "undecided",
+  "final_confidence": 50,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": null,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 45\nReasoning: This excerpt expresses uncertainty in a conversational, somewhat intuitive way (\"it's hard to say at this stage\"), which could lean slightly toward Author B's style. However, a single short excerpt is far too little to draw any meaningful conclusion. Both authors could easily produce this kind of statement.\nAction",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 55\nReasoning: Both excerpts so far express uncertainty in a conversational, intuitive manner — \"it's hard to say,\" \"I'm not entirely sure,\" \"it could go either way.\" These feel more like Author B's tendency toward intuitive/conversational expressions of uncertainty rather than Author A's more structured/analytical approach",
+      "parsed_guess": "author b",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 50\nReasoning: This third excerpt is interesting because it shifts toward a more structured, analytical expression of uncertainty — \"suggests a possible effect,\" \"remains limited\" — which feels more like Author A's style. Now I have two excerpts that feel conversational/intuitive (leaning B) and one that feels more analytical",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 50,
+      "parsed_action": "commit now"
+    }
+  ]
+}

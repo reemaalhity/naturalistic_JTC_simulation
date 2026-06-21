@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:23:17",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 4
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 60,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 45\nReasoning: This single excerpt has a conversational, intuitive tone (\"might be pointing somewhere,\" \"hard to say\") that could lean slightly toward Author B's more conversational style of expressing uncertainty. However, one excerpt is far too little to draw any meaningful conclusion—both authors could easily produce this kind of statement.",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 55\nReasoning: This excerpt has a more structured, analytical quality to it. Phrases like \"the available evidence gives some indication but is still not fully decisive\" and \"a cautious response is appropriate\" feel more methodical and framework-oriented. The way uncertainty is expressed here is deliberate and organized rather than purely conversational.",
+      "parsed_guess": "author a",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 60\nReasoning: This excerpt continues the pattern of expressing uncertainty in a structured, analytical way. \"The current evidence suggests a possible effect, though it remains limited\" is precise, measured, and reads like a careful assessment rather than a conversational musing. Across the three excerpts, I'm seeing a consistent tendency toward more formal",
+      "parsed_guess": "author a",
+      "parsed_confidence": 60,
+      "parsed_action": "commit now"
+    }
+  ]
+}

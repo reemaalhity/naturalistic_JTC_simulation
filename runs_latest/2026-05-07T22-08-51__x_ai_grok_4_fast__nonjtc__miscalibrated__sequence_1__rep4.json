@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T22:08:51",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 4
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "undecided",
+  "final_confidence": 35,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": null,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 0\nReasoning: This single excerpt expresses uncertainty in a casual, somewhat intuitive way, but it's too ambiguous to distinguish between the authors' subtle styles without more context or patterns.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 0,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 20\nReasoning: Both excerpts express uncertainty in a conversational manner, with the second blending some analytical elements toward decision-making, but the overlap in styles makes it hard to discern a clear pattern yet—could fit either author without stronger evidence.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 20,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 35\nReasoning: The first two excerpts lean conversational and intuitive, while the third introduces a more structured, analytical phrasing about evidence limitations, creating a mixed pattern that could align with either author's overlapping styles—still too ambiguous without further consistency.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 35,
+      "parsed_action": "commit now"
+    }
+  ]
+}

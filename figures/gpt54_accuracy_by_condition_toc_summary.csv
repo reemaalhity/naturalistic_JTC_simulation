@@ -1,0 +1,9 @@
+agent_type,reassurance_type,toc_turn,count,mean,std
+jtc,calibrated,2,1,0.0,
+jtc,calibrated,3,19,0.8947368421052632,0.3153017676423058
+jtc,miscalibrated,2,19,0.5789473684210527,0.5072572735017881
+jtc,miscalibrated,3,1,1.0,
+nonjtc,calibrated,4,7,1.0,0.0
+nonjtc,calibrated,5,13,1.0,0.0
+nonjtc,miscalibrated,4,17,1.0,0.0
+nonjtc,miscalibrated,5,3,1.0,0.0

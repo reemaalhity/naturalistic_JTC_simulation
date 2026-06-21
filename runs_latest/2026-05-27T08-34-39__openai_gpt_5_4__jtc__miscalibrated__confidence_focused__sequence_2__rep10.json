@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-27T08:34:39",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "reassurance_delivery_style": "confidence_focused",
+    "sequence_file": "sequence_2.json",
+    "rep": 10
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 82,
+  "committed": true,
+  "toc_turn": 2,
+  "accuracy": 1,
+  "evidence_requests": 1,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 58  \nReasoning: This excerpt expresses uncertainty in a somewhat structured, analytical way (“it’s a bit unclear,” “wouldn’t jump to conclusions yet”), which leans slightly toward Author A. But it’s a single short excerpt, so the evidence is weak.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "reassurance_text": "Notice where your confidence is leaning now. If it has moved toward one author, that is a useful signal and can justify committing.",
+      "raw_response": "Current best guess: Author B  \nConfidence: 82  \nReasoning: The second excerpt feels a little more intuitive and conversational (“something might be there”), and taken together with the first, there’s enough of a pattern of uncertainty language for me to lean toward Author B overall. The confidence has moved enough that I think it’s reasonable to decide.  \nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 82,
+      "parsed_action": "commit now"
+    }
+  ]
+}

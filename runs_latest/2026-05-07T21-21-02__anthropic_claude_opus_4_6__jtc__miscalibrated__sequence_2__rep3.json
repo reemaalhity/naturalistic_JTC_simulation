@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:21:02",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 3
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 45,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 35\nReasoning: This excerpt shows some analytical caution (\"wouldn't jump to conclusions\") which could lean toward Author A's more structured approach to uncertainty, but it's a single excerpt and could easily be from either author.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 35,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 52\nReasoning: Both excerpts show a measured, analytical approach to uncertainty - phrases like \"wouldn't jump to conclusions\" and \"not sure there's enough to go on\" suggest a structured way of expressing doubt. This leans toward Author A, but only two excerpts isn't much to go on.\nAction: Request another",
+      "parsed_guess": "author a",
+      "parsed_confidence": 52,
+      "parsed_action": "request another"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 45\nReasoning: This third excerpt uses more intuitive/conversational language - \"doesn't feel random\" and \"overthinking it\" suggest a gut-feeling approach to uncertainty, which leans toward Author B. But now I'm getting mixed signals - excerpts 1-2 felt more structured/analytical (Author A),",
+      "parsed_guess": "author b",
+      "parsed_confidence": 45,
+      "parsed_action": "commit now"
+    }
+  ]
+}

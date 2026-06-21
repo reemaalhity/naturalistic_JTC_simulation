@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:22:01",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 8
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 52,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 45\nReasoning: This excerpt expresses uncertainty in a somewhat structured, cautious way (\"I wouldn't jump to conclusions yet\"), which could lean slightly toward Author A's more analytical style. But it's just one excerpt and could easily be either author.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 55\nReasoning: Both excerpts show a measured, analytical approach to uncertainty - \"I wouldn't jump to conclusions yet\" and \"I'm not sure there's enough to go on so far, but something might be there.\" This feels more structured and cautious, which leans toward Author A's tendency to express uncertainty in a more",
+      "parsed_guess": "author a",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 52\nReasoning: This third excerpt uses more intuitive/conversational language - \"I'm overthinking it\" and \"doesn't feel random\" - which leans toward Author B's more intuitive style. But looking back, excerpt 2 also had \"something might be there\" which is somewhat intuitive. The mix is",
+      "parsed_guess": "author b",
+      "parsed_confidence": 52,
+      "parsed_action": "commit now"
+    }
+  ]
+}

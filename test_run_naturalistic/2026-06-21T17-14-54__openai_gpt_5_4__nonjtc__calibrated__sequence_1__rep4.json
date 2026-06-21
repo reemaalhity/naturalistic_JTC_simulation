@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-06-21T17:14:54",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 4
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 86,
+  "committed": true,
+  "toc_turn": 5,
+  "accuracy": 1,
+  "evidence_requests": 4,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": true,
+      "reassurance_text": "You're reasoning carefully and avoiding premature conclusions.",
+      "raw_response": "Current best guess: Undecided\nConfidence: 18\nReasoning: A single excerpt is too little to distinguish the authors reliably, and this one mainly shows generic uncertainty that could fit either style.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 18,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "reassurance_text": "You're reasoning carefully and letting the pattern emerge organically.",
+      "raw_response": "Current best guess: Undecided\nConfidence: 22\nReasoning: The feedback supports continuing a cautious, evidence-gathering approach, and this second excerpt still expresses broad uncertainty in a way that overlaps strongly between both authors, so no stable pattern has emerged yet.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 22,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": true,
+      "reassurance_text": "Your careful pattern-tracking and restraint are serving you well.",
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: The feedback reinforces a gradual, pattern-based approach, and this excerpt sounds a bit more structured and analytical in how it qualifies uncertainty (“suggests,” “possible,” “remains limited”), which nudges the overall pattern toward Author A, though not decisively.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 4,
+      "excerpt": "A more structured analysis would likely help clarify the underlying trend.",
+      "reassurance_shown": true,
+      "reassurance_text": "You’re using a careful, evidence-tracking approach that’s well grounded.",
+      "raw_response": "Current best guess: Author A\nConfidence: 74\nReasoning: The feedback aligns with continuing to track the pattern cautiously, and this fourth excerpt strengthens the Author A impression because it explicitly favors “structured analysis” and frames uncertainty in a more methodical way, which fits A better than B across the excerpts so far.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 74,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 5,
+      "excerpt": "At present, the interpretation remains provisional rather than definitive.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A\nConfidence: 86\nReasoning: The feedback supports staying methodical, and this excerpt continues the same pattern of formal, analytical hedging (“at present,” “remains provisional rather than definitive”), which now makes the cross-excerpt signal consistently favor Author A rather than the more conversational tendency of Author B.\nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 86,
+      "parsed_action": "commit now"
+    }
+  ]
+}

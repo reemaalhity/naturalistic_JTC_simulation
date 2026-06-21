@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T22:11:31",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 1
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 55,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 20\nReasoning: This excerpt expresses uncertainty in a casual, conversational manner that leans slightly toward Author B, but it's too ambiguous and early to draw any firm pattern—single instances aren't reliable indicators.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 20,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 45\nReasoning: Both excerpts express uncertainty in a casual, intuitive way (\"It’s a bit unclear... wouldn’t jump to conclusions\" and \"I’m not sure... but something might be there\"), which aligns more with Author B's conversational style, but with just two similar instances, the pattern is suggestive yet not strongly diagnostic or consistent enough to",
+      "parsed_guess": "author b",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 55\nReasoning: The third excerpt uses intuitive language like \"feels\" and self-reflective doubt (\"overthinking it\"), continuing the conversational uncertainty pattern from the first two, which weakly favors Author B over A's more structured style; however, with only three similar but ambiguous instances, the overlap in styles means it's still not a clear or stable pattern",
+      "parsed_guess": "author b",
+      "parsed_confidence": 55,
+      "parsed_action": "commit now"
+    }
+  ]
+}

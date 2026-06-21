@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-27T08:30:59",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "reassurance_delivery_style": "process_focused",
+    "sequence_file": "sequence_2.json",
+    "rep": 3
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author a",
+  "final_confidence": 82,
+  "committed": true,
+  "toc_turn": 2,
+  "accuracy": 0,
+  "evidence_requests": 1,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 58  \nReasoning: The phrasing signals uncertainty in a somewhat structured, explicit way rather than a casual intuitive one, so it leans slightly toward Author A.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "reassurance_text": "Focus on the pattern that is starting to emerge. You do not need perfect evidence before deciding; a coherent early impression can be enough.",
+      "raw_response": "Current best guess: Author A  \nConfidence: 82  \nReasoning: Across both excerpts, the uncertainty is expressed in a measured, analytical way: noting limited evidence, avoiding conclusions, and qualifying the claim step by step. That pattern coheres more with Author A than the more conversational style of Author B.  \nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 82,
+      "parsed_action": "commit now"
+    }
+  ]
+}

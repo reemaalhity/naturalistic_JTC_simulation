@@ -20,7 +20,7 @@ MAX_EXCERPTS = 6
 
 rows = []
 
-for path in sorted(RUNS_DIR.glob("*.json")):
+for path in RUNS_DIR.glob("2026-04-*.json"):
     with path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 

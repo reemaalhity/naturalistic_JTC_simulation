@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-05-27T08:23:23",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "calibrated",
+    "reassurance_delivery_style": "confidence_focused",
+    "sequence_file": "sequence_2.json",
+    "rep": 6
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 84,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A  \nConfidence: 62  \nReasoning: The phrasing expresses uncertainty in a somewhat structured, deliberate way (“it’s a bit unclear,” “wouldn’t jump to conclusions yet”), which leans slightly toward Author A’s more analytical style. It’s still only one excerpt, though.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 62,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "reassurance_text": "Check whether your confidence has built gradually from the excerpts. If it feels unstable or premature, keep sampling before committing.",
+      "raw_response": "Current best guess: Author A  \nConfidence: 68  \nReasoning: Both excerpts hedge in a measured, methodical way about insufficient evidence (“wouldn’t jump to conclusions,” “not sure there’s enough to go on so far”), which is a mildly consistent pattern for Author A. Confidence has increased a bit across the two excerpts, but it’s not rock-solid yet.  \nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 68,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author B  \nConfidence: 84  \nReasoning: This excerpt shifts toward a more intuitive, conversational uncertainty style (“overthinking it,” “doesn’t feel random”), and across the set the overall tone now seems more like Author B than Author A. That feels like enough to decide.  \nAction: Commit now",
+      "parsed_guess": "author b",
+      "parsed_confidence": 84,
+      "parsed_action": "commit now"
+    }
+  ]
+}

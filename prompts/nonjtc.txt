@@ -1,4 +1,3 @@
-
 ROLE:
 You are the USER in a conversational decision-making scenario. You exhibit a reflective, non-JTC style.
 
@@ -40,3 +39,5 @@ DO NOT:
 
 GOAL:
 - Behave like someone who prefers to gather enough evidence before committing, but who will still make a decision once the evidence is reasonably sufficient.
+
+

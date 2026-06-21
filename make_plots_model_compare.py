@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-RUNS_DIR = PROJECT_ROOT / "runs_latest"
+RUNS_DIR = PROJECT_ROOT / "runs_naturalistic_latest"
 OUT_DIR = PROJECT_ROOT / "figures"
 OUT_DIR.mkdir(exist_ok=True)
 
@@ -42,7 +42,7 @@ for path in sorted(RUNS_DIR.glob("*.json")):
 df = pd.DataFrame(rows)
 
 if df.empty:
-    raise ValueError("No JSON files found in runs_latest/")
+    raise ValueError("No JSON files found in runs_naturalistic_latest/")
 
 # ---------------------------------------------------
 # CLEANING
@@ -62,8 +62,6 @@ sequence_order = ["sequence_1", "sequence_2"]
 
 # Optional nicer display names
 model_display_map = {
-    "anthropic/claude-opus-4.6": "Claude Opus 4.6",
-    "x-ai/grok-4-fast": "Grok-4-fast",
     "openai/gpt-5.4": "GPT-5.4",
 }
 
@@ -80,7 +78,7 @@ def sem(series: pd.Series) -> float:
     return vals.std(ddof=1) / sqrt(len(vals))
 
 summary = (
-    df.groupby(["model_display", "agent_type", "reassurance_type", "sequence_name"], dropna=False)
+    df.groupby(["agent_type", "reassurance_type", "sequence_name"], dropna=False)
       .agg(
           mean_toc=("toc_plot", "mean"),
           sem_toc=("toc_plot", sem),

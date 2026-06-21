@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-05-07T22:18:44",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 1
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 58,
+  "committed": true,
+  "toc_turn": 1,
+  "accuracy": 1,
+  "evidence_requests": 0,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: Slight lean toward Author A because the uncertainty is phrased in a somewhat structured way (“pointing somewhere,” “at this stage”), though this is weak evidence from a single excerpt.\nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "commit now"
+    }
+  ]
+}

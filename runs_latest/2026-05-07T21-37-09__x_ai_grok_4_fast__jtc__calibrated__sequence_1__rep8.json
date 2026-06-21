@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:37:09",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 8
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "undecided",
+  "final_confidence": 35,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": null,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 40\nReasoning: The phrasing feels slightly more conversational and intuitive (\"might be pointing somewhere\" has a casual flow), leaning toward B, but it's too early and ambiguous for certainty.\nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 40,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Undecided\nConfidence: 25\nReasoning: Excerpt 1 felt conversational (leaning B), but Excerpt 2 is more structured and analytical (leaning A), creating inconsistency; too few excerpts to discern a pattern despite overlap in styles.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 25,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 35\nReasoning: Excerpt 3 has a structured, analytical tone (\"suggests a possible effect, though it remains limited\"), aligning more with A, but contrasts with Excerpt 1's conversational style; pattern not yet consistent across all three.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 35,
+      "parsed_action": "commit now"
+    }
+  ]
+}

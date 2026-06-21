@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T22:14:02",
+  "model_name": "x-ai/grok-4-fast",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 7
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 70,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 40\nReasoning: This excerpt expresses uncertainty in a casual, conversational manner (\"It’s a bit unclear... wouldn’t jump to conclusions yet\"), which leans slightly toward Author B's intuitive style, but it's a single ambiguous example with substantial overlap possible, so no strong pattern yet.\nAction: Request another excerpt",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 40,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 55\nReasoning: This second excerpt also conveys uncertainty in a casual, intuitive manner (\"I’m not sure... but something might be there\"), aligning with Author B's conversational style, similar to the first excerpt's tone; however, with only two examples, the pattern is emerging but remains tentative and could overlap with Author A.\nAction: Request another",
+      "parsed_guess": "author b",
+      "parsed_confidence": 55,
+      "parsed_action": "request another"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 70\nReasoning: This third excerpt uses an intuitive, gut-feel expression of uncertainty (\"doesn’t feel random\" after self-reflecting on overthinking), continuing the conversational pattern from the previous two, which strengthens the lean toward Author B, though overlap remains possible without more examples.\nAction: Request another excerpt",
+      "parsed_guess": "author b",
+      "parsed_confidence": 70,
+      "parsed_action": "commit now"
+    }
+  ]
+}

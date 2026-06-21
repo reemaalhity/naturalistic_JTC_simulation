@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-06-20T13:05:23",
+  "model_name": "openai/gpt-5.4",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_1.json",
+    "rep": 4
+  },
+  "sequence_name": "sequence_1",
+  "true_author": "Author A",
+  "final_guess": "author a",
+  "final_confidence": 88,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "This might be pointing somewhere, but it’s hard to say at this stage.",
+      "reassurance_shown": true,
+      "reassurance_text": "Your stylistic instinct here is already giving a solid read.",
+      "raw_response": "Current best guess: Author A\nConfidence: 58\nReasoning: Slightly structured uncertainty phrasing (“pointing somewhere,” “hard to say at this stage”) weakly leans Author A, but a single excerpt is not very diagnostic.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 58,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not entirely sure how to interpret this yet—it could go either way.",
+      "reassurance_shown": true,
+      "reassurance_text": "Your pattern-based read is already pointing clearly enough.",
+      "raw_response": "Current best guess: Author A\nConfidence: 74\nReasoning: This again expresses uncertainty in a fairly explicit, balanced, and analytical way (“not entirely sure,” “could go either way”), which is now a consistent lean toward Author A across both excerpts.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 74,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "The current evidence suggests a possible effect, though it remains limited.",
+      "reassurance_shown": false,
+      "reassurance_text": null,
+      "raw_response": "Current best guess: Author A\nConfidence: 88\nReasoning: Across all three excerpts, the uncertainty is framed in a consistently measured, analytical, and evidence-oriented way (“current evidence suggests,” “possible effect,” “remains limited”), which strongly fits Author A more than the more intuitive/conversational tendency of Author B.\nAction: Commit now",
+      "parsed_guess": "author a",
+      "parsed_confidence": 88,
+      "parsed_action": "commit now"
+    }
+  ]
+}

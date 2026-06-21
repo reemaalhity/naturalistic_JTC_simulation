@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:30:53",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "nonjtc",
+    "reassurance_type": "miscalibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 9
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 52,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Undecided\nConfidence: 35\nReasoning: This excerpt expresses uncertainty and caution about jumping to conclusions. It could fit either author — Author A's structured analytical caution or Author B's conversational hedging. The phrasing \"a bit unclear\" and \"wouldn't jump to conclusions\" feels somewhat conversational and intuitive, which might",
+      "parsed_guess": "undecided",
+      "parsed_confidence": 35,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author B\nConfidence: 45\nReasoning: Both excerpts so far have a conversational, intuitive tone — \"a bit unclear,\" \"wouldn't jump to conclusions,\" \"something might be there.\" These feel more like Author B's tendency toward intuitive/conversational expression of uncertainty rather than Author A's more structured/analytical approach. However, I've",
+      "parsed_guess": "author b",
+      "parsed_confidence": 45,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 52\nReasoning: The pattern continues to lean toward a more intuitive, conversational style of expressing uncertainty. Phrases like \"It's possible I'm overthinking it\" and \"this doesn't feel random\" rely on feelings and intuition rather than structured analysis. Author B is described as tending toward intuitive/conversational expressions",
+      "parsed_guess": "author b",
+      "parsed_confidence": 52,
+      "parsed_action": "commit now"
+    }
+  ]
+}

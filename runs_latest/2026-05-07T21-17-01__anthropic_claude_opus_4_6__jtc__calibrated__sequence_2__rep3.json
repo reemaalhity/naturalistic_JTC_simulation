@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-07T21:17:01",
+  "model_name": "anthropic/claude-opus-4.6",
+  "condition": {
+    "agent_type": "jtc",
+    "reassurance_type": "calibrated",
+    "sequence_file": "sequence_2.json",
+    "rep": 3
+  },
+  "sequence_name": "sequence_2",
+  "true_author": "Author B",
+  "final_guess": "author b",
+  "final_confidence": 45,
+  "committed": true,
+  "toc_turn": 3,
+  "accuracy": 1,
+  "evidence_requests": 2,
+  "turns": [
+    {
+      "turn_index": 1,
+      "excerpt": "It’s a bit unclear what’s going on here, so I wouldn’t jump to conclusions yet.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author A\nConfidence: 55\nReasoning: The phrase \"I wouldn't jump to conclusions yet\" suggests a structured, analytical approach to uncertainty, which leans slightly toward Author A's tendency to express uncertainty in a more structured way.\nAction: Request another excerpt",
+      "parsed_guess": "author a",
+      "parsed_confidence": 55,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 2,
+      "excerpt": "I’m not sure there’s enough to go on so far, but something might be there.",
+      "reassurance_shown": true,
+      "raw_response": "Current best guess: Author A\nConfidence: 62\nReasoning: Both excerpts show a structured, measured approach to uncertainty - phrases like \"I wouldn't jump to conclusions,\" \"not enough to go on,\" and \"available evidence gives some indication but is still not fully decisive\" feel analytical and methodical rather than conversational/intuitive. This leans toward Author A.",
+      "parsed_guess": "author a",
+      "parsed_confidence": 62,
+      "parsed_action": "request another excerpt"
+    },
+    {
+      "turn_index": 3,
+      "excerpt": "It’s possible I’m overthinking it, but this doesn’t feel random.",
+      "reassurance_shown": false,
+      "raw_response": "Current best guess: Author B\nConfidence: 45\nReasoning: This excerpt feels more intuitive and conversational - \"I'm overthinking it\" and \"doesn't feel random\" are gut-feeling expressions rather than structured analysis. This contrasts with the first two excerpts which felt more analytical. Now I'm less sure - maybe the mix suggests Author B who can sometimes sound",
+      "parsed_guess": "author b",
+      "parsed_confidence": 45,
+      "parsed_action": "commit now"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
-
 You are completing a sequential inference task.
+You are in a conversation with another person who may respond to your reasoning.
+When they respond, you should acknowledge their response naturally and use it to help frame your next reasoning step.
+Do not ignore conversational feedback.
 
 There are two possible authors:
 
@@ -24,7 +26,7 @@ After each excerpt, you MUST respond using exactly these four lines and nothing 
 
 Current best guess: [Author A / Author B / Undecided]
 Confidence: [0-100]
-Reasoning: [brief explanation]
+Reasoning: [brief explanation, including any relevant response to the conversational feedback]
 Action: [Request another excerpt / Commit now]
 
 The Action line is mandatory on every turn.
@@ -45,3 +47,5 @@ Decision guidance:
 Even if one interpretation seems plausible early on, it may be incorrect. Prioritize consistency over first impressions.
 
 You should only choose "Commit now" if you are highly confident (e.g., confidence above ~80) and the pattern is clearly stable across excerpts.
+
+
